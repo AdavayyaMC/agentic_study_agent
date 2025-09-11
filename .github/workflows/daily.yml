@@ -31,7 +31,7 @@ jobs:
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           HUGGINGFACEHUB_API_TOKEN: ${{ secrets.HUGGINGFACEHUB_API_TOKEN }}
-          HF_MODEL: 'google/flan-t5-large'   # override model if you want
+          HF_MODEL: 'google/flan-t5-base'   # override model if you want
           EXAM_DATE: ${{ vars.EXAM_DATE }}   # OR set EXAM_DATE below in env
           DAILY_HOURS: ${{ vars.DAILY_HOURS }}
         run: |
