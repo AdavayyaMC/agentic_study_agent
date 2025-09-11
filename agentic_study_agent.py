@@ -48,10 +48,12 @@ def send_telegram(text):
 def make_hf_llm():
     return HuggingFaceEndpoint(
         repo_id=HF_MODEL,
-        task="text2text-generation",   # for T5; change to "text-generation" if GPT-like model
-        temperature=0.7,
-        max_new_tokens=512
+        task="text2text-generation",   # IMPORTANT: T5-style models
+        max_new_tokens=512,
+        temperature=0.0,
+        huggingfacehub_api_token=os.environ.get("HUGGINGFACEHUB_API_TOKEN")
     )
+
 
 # --- Prompts ---
 plan_prompt_template = """
