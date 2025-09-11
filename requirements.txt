@@ -1,3 +1,5 @@
-langchain>=0.0.350
-huggingface_hub>=0.14.1
-requests>=2.28
+langchain
+langchain-community
+huggingface_hub
+requests
+python-telegram-bot
