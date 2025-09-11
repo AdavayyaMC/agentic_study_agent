@@ -1,0 +1,6 @@
+[
+  {"topic": "Chapter 1 - Basics", "est_hours": 4, "priority": "high"},
+  {"topic": "Chapter 2 - Core Concepts", "est_hours": 6, "priority": "high"},
+  {"topic": "Chapter 3 - Advanced", "est_hours": 5, "priority": "medium"},
+  {"topic": "Revision & Practice Tests", "est_hours": 6, "priority": "high"}
+]
