@@ -2,16 +2,14 @@
 import os, json, datetime, requests, sys, re
 from pathlib import Path
 
-# --- LangChain imports (updated) ---
-from langchain_community.llms import HuggingFaceHub
-from langchain.chains import LLMChain
+# --- Imports (new LangChain) ---
+from langchain_huggingface import HuggingFaceEndpoint
 from langchain_core.prompts import PromptTemplate
 
 # --- Config (via env or defaults) ---
 TELEGRAM_TOKEN = os.environ.get("TELEGRAM_TOKEN")
 TELEGRAM_CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID")
-HF_TOKEN = os.environ.get("HUGGINGFACEHUB_API_TOKEN")
-HF_MODEL = os.environ.get("HF_MODEL", "google/flan-t5-large")  # change if desired
+HF_MODEL = os.environ.get("HF_MODEL", "google/flan-t5-large")  # default model
 EXAM_DATE = os.environ.get("EXAM_DATE", None)  # format YYYY-MM-DD
 DAILY_HOURS = float(os.environ.get("DAILY_HOURS", "2"))
 
@@ -46,17 +44,16 @@ def send_telegram(text):
     except Exception as e:
         print("Telegram send failed:", e)
 
-# --- LLM calling helpers ---
+# --- LLM setup ---
 def make_hf_llm():
-    if not HF_TOKEN:
-        raise RuntimeError("HUGGINGFACEHUB_API_TOKEN required in env")
-    return HuggingFaceHub(
+    return HuggingFaceEndpoint(
         repo_id=HF_MODEL,
-        task="text2text-generation",   # required for Flan-T5
-        huggingfacehub_api_token=HF_TOKEN,
-        model_kwargs={"temperature": 0.0, "max_length": 512}
+        task="text2text-generation",   # for T5; change to "text-generation" if GPT-like model
+        temperature=0.7,
+        max_new_tokens=512
     )
 
+# --- Prompts ---
 plan_prompt_template = """
 You are a planning assistant. Inputs:
 - exam_date: {exam_date}
@@ -68,17 +65,15 @@ Create a JSON array (only the JSON) of objects with fields:
 - date (YYYY-MM-DD)
 - topic (string)
 - duration_hours (number)
-- status (one of: pending, done)
+- status (pending or done)
 - notes (string, optional)
 
 Constraints:
-1) Place study sessions from start_date up to exam_date (exclusive).
-2) Do not exceed daily_hours total duration per date.
-3) Prioritize 'high' priority topics earlier; include at least one review day every 6 days.
-4) Try to spread long topics across multiple days.
-5) Output valid JSON (an array). Keep entries ordered by date.
-
-Return only the JSON array (no commentary).
+1) Schedule sessions from start_date to exam_date (exclusive).
+2) Do not exceed daily_hours per day.
+3) Prioritize 'high' priority topics earlier; add one review day every 6 days.
+4) Split long topics across multiple days.
+5) Output only valid JSON array.
 """
 
 rebalanced_prompt_template = """
@@ -90,21 +85,21 @@ Inputs:
 - exam_date: {exam_date}
 - daily_hours: {daily_hours}
 
-Produce a new valid JSON array (only the JSON) with fields:
+Produce a new valid JSON array (only JSON) with fields:
 - date, topic, duration_hours, status, notes
 Keep previously 'done' items unchanged. Insert missed sessions fairly (no daily_hours exceed).
-Keep output strictly JSON.
 """
 
+# --- LLM call helpers ---
 def call_llm_generate_plan(syllabus, start_date, exam_date, daily_hours):
     llm = make_hf_llm()
     prompt = PromptTemplate(
         input_variables=["exam_date","start_date","daily_hours","syllabus_json"],
         template=plan_prompt_template
     )
-    chain = LLMChain(llm=llm, prompt=prompt)
+    chain = prompt | llm
     syllabus_json = json.dumps(syllabus, ensure_ascii=False)
-    out = chain.run({
+    out = chain.invoke({
         "exam_date": exam_date,
         "start_date": start_date,
         "daily_hours": str(daily_hours),
@@ -118,8 +113,8 @@ def call_llm_rebalance(existing_plan, missed, start_date, exam_date, daily_hours
         input_variables=["existing_plan","missed","start_date","exam_date","daily_hours"],
         template=rebalanced_prompt_template
     )
-    chain = LLMChain(llm=llm, prompt=prompt)
-    out = chain.run({
+    chain = prompt | llm
+    out = chain.invoke({
         "existing_plan": json.dumps(existing_plan, ensure_ascii=False),
         "missed": json.dumps(missed, ensure_ascii=False),
         "start_date": start_date,
@@ -129,13 +124,14 @@ def call_llm_rebalance(existing_plan, missed, start_date, exam_date, daily_hours
     return extract_json_from_text(out)
 
 def extract_json_from_text(text):
-    text = text.strip()
-    first = text.find('[')
-    last = text.rfind(']')
+    """Extract JSON array from LLM output."""
+    raw = text.strip() if isinstance(text, str) else str(text)
+    first = raw.find('[')
+    last = raw.rfind(']')
     if first != -1 and last != -1 and last > first:
-        candidate = text[first:last+1]
+        candidate = raw[first:last+1]
     else:
-        candidate = text
+        candidate = raw
     try:
         return json.loads(candidate)
     except Exception:
@@ -146,18 +142,18 @@ def extract_json_from_text(text):
 # --- Main flow ---
 def main():
     if not EXAM_DATE:
-        print("Set EXAM_DATE environment variable (YYYY-MM-DD). Aborting.")
+        print("Set EXAM_DATE env var (YYYY-MM-DD). Aborting.")
         sys.exit(1)
 
     syllabus = read_json_file(SYLLABUS_FILE)
     if syllabus is None:
-        print("No syllabus.json found. Create one (see README). Aborting.")
+        print("No syllabus.json found. Aborting.")
         sys.exit(1)
 
     plan = read_json_file(PLAN_FILE) or []
 
     if not plan:
-        print("No plan found; generating a new plan with the LLM...")
+        print("No plan found; generating new plan with LLM...")
         plan = call_llm_generate_plan(syllabus, today_str(0), EXAM_DATE, DAILY_HOURS)
         write_json_file(PLAN_FILE, plan)
         send_telegram(f"✅ Generated a study plan from {today_str(0)} to {EXAM_DATE}. Check plan.json in repo.")
@@ -165,11 +161,12 @@ def main():
 
     today = today_str(0)
     todays = [p for p in plan if p.get("date") == today and p.get("status","pending")!="done"]
+
     if todays:
         msg = f"📚 Study plan for {today}:\n"
         for i,t in enumerate(todays,1):
             msg += f"{i}) {t.get('topic')} — {t.get('duration_hours')} hrs\n"
-        msg += "\nTo mark tasks done: edit plan.json in the repo and set status to \"done\"."
+        msg += "\nTo mark tasks done: edit plan.json and set status to 'done'."
         send_telegram(msg)
     else:
         print("No tasks scheduled for today.")
@@ -183,7 +180,7 @@ def main():
             m["status"] = "missed"
         new_plan = call_llm_rebalance(plan, missed, today, EXAM_DATE, DAILY_HOURS)
         write_json_file(PLAN_FILE, new_plan)
-        send_telegram(f"🔁 Rebalanced plan to accommodate {len(missed)} missed session(s). Check updated plan.json.")
+        send_telegram(f"🔁 Rebalanced plan for {len(missed)} missed session(s). Check updated plan.json.")
     else:
         print("No missed sessions detected.")
 
