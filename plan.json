@@ -1,1 +1,198 @@
-[]
+[
+  {
+    "date": "2025-09-11",
+    "topic": "Chapter 1 - Basics",
+    "duration_hours": 2.0,
+    "status": "pending",
+    "notes": ""
+  },
+  {
+    "date": "2025-09-12",
+    "topic": "Chapter 2 - Core Concepts",
+    "duration_hours": 2.0,
+    "status": "pending",
+    "notes": ""
+  },
+  {
+    "date": "2025-09-13",
+    "topic": "Revision & Practice Tests",
+    "duration_hours": 2.0,
+    "status": "pending",
+    "notes": ""
+  },
+  {
+    "date": "2025-09-14",
+    "topic": "Chapter 3 - Advanced",
+    "duration_hours": 2.0,
+    "status": "pending",
+    "notes": ""
+  },
+  {
+    "date": "2025-09-15",
+    "topic": "Chapter 1 - Basics",
+    "duration_hours": 2.0,
+    "status": "pending",
+    "notes": ""
+  },
+  {
+    "date": "2025-09-16",
+    "topic": "Review & Practice",
+    "duration_hours": 1.0,
+    "status": "pending",
+    "notes": "Periodic review day"
+  },
+  {
+    "date": "2025-09-16",
+    "topic": "Chapter 2 - Core Concepts",
+    "duration_hours": 1.0,
+    "status": "pending",
+    "notes": ""
+  },
+  {
+    "date": "2025-09-17",
+    "topic": "Revision & Practice Tests",
+    "duration_hours": 2.0,
+    "status": "pending",
+    "notes": ""
+  },
+  {
+    "date": "2025-09-18",
+    "topic": "Chapter 3 - Advanced",
+    "duration_hours": 2.0,
+    "status": "pending",
+    "notes": ""
+  },
+  {
+    "date": "2025-09-19",
+    "topic": "Chapter 2 - Core Concepts",
+    "duration_hours": 2.0,
+    "status": "pending",
+    "notes": ""
+  },
+  {
+    "date": "2025-09-20",
+    "topic": "Revision & Practice Tests",
+    "duration_hours": 2.0,
+    "status": "pending",
+    "notes": ""
+  },
+  {
+    "date": "2025-09-21",
+    "topic": "Chapter 3 - Advanced",
+    "duration_hours": 1.0,
+    "status": "pending",
+    "notes": ""
+  },
+  {
+    "date": "2025-09-21",
+    "topic": "Chapter 2 - Core Concepts",
+    "duration_hours": 1.0,
+    "status": "pending",
+    "notes": ""
+  },
+  {
+    "date": "2025-09-22",
+    "topic": "Review & Practice",
+    "duration_hours": 1.0,
+    "status": "pending",
+    "notes": "Periodic review day"
+  },
+  {
+    "date": "2025-09-28",
+    "topic": "Review & Practice",
+    "duration_hours": 1.0,
+    "status": "pending",
+    "notes": "Periodic review day"
+  },
+  {
+    "date": "2025-10-04",
+    "topic": "Review & Practice",
+    "duration_hours": 1.0,
+    "status": "pending",
+    "notes": "Periodic review day"
+  },
+  {
+    "date": "2025-10-10",
+    "topic": "Review & Practice",
+    "duration_hours": 1.0,
+    "status": "pending",
+    "notes": "Periodic review day"
+  },
+  {
+    "date": "2025-10-16",
+    "topic": "Review & Practice",
+    "duration_hours": 1.0,
+    "status": "pending",
+    "notes": "Periodic review day"
+  },
+  {
+    "date": "2025-10-22",
+    "topic": "Review & Practice",
+    "duration_hours": 1.0,
+    "status": "pending",
+    "notes": "Periodic review day"
+  },
+  {
+    "date": "2025-10-28",
+    "topic": "Review & Practice",
+    "duration_hours": 1.0,
+    "status": "pending",
+    "notes": "Periodic review day"
+  },
+  {
+    "date": "2025-11-03",
+    "topic": "Review & Practice",
+    "duration_hours": 1.0,
+    "status": "pending",
+    "notes": "Periodic review day"
+  },
+  {
+    "date": "2025-11-09",
+    "topic": "Review & Practice",
+    "duration_hours": 1.0,
+    "status": "pending",
+    "notes": "Periodic review day"
+  },
+  {
+    "date": "2025-11-15",
+    "topic": "Review & Practice",
+    "duration_hours": 1.0,
+    "status": "pending",
+    "notes": "Periodic review day"
+  },
+  {
+    "date": "2025-11-21",
+    "topic": "Review & Practice",
+    "duration_hours": 1.0,
+    "status": "pending",
+    "notes": "Periodic review day"
+  },
+  {
+    "date": "2025-11-27",
+    "topic": "Review & Practice",
+    "duration_hours": 1.0,
+    "status": "pending",
+    "notes": "Periodic review day"
+  },
+  {
+    "date": "2025-12-03",
+    "topic": "Review & Practice",
+    "duration_hours": 1.0,
+    "status": "pending",
+    "notes": "Periodic review day"
+  },
+  {
+    "date": "2025-12-09",
+    "topic": "Review & Practice",
+    "duration_hours": 1.0,
+    "status": "pending",
+    "notes": "Periodic review day"
+  },
+  {
+    "date": "2025-12-15",
+    "topic": "Review & Practice",
+    "duration_hours": 1.0,
+    "status": "pending",
+    "notes": "Periodic review day"
+  }
+]
