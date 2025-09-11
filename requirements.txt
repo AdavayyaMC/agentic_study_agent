@@ -1,5 +1,4 @@
 langchain
-langchain-community
-huggingface_hub
+langchain-huggingface
 requests
 python-telegram-bot
