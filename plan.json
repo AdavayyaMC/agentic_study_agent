@@ -24,8 +24,8 @@
     "date": "2025-09-14",
     "topic": "Chapter 3 - Advanced",
     "duration_hours": 2.0,
-    "status": "pending",
-    "notes": ""
+    "status": "missed",
+    "notes": "marked missed on 2025-09-15;"
   },
   {
     "date": "2025-09-15",
@@ -215,5 +215,12 @@
     "duration_hours": 2.0,
     "status": "pending",
     "notes": "rescheduled from 2025-09-13"
+  },
+  {
+    "date": "2025-09-26",
+    "topic": "Chapter 3 - Advanced",
+    "duration_hours": 2.0,
+    "status": "pending",
+    "notes": "rescheduled from 2025-09-14"
   }
 ]
