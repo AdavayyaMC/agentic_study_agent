@@ -31,8 +31,8 @@
     "date": "2025-09-15",
     "topic": "Chapter 1 - Basics",
     "duration_hours": 2.0,
-    "status": "pending",
-    "notes": ""
+    "status": "missed",
+    "notes": "marked missed on 2025-09-16;"
   },
   {
     "date": "2025-09-16",
@@ -222,5 +222,12 @@
     "duration_hours": 2.0,
     "status": "pending",
     "notes": "rescheduled from 2025-09-14"
+  },
+  {
+    "date": "2025-09-27",
+    "topic": "Chapter 1 - Basics",
+    "duration_hours": 2.0,
+    "status": "pending",
+    "notes": "rescheduled from 2025-09-15"
   }
 ]
