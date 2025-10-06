@@ -297,8 +297,8 @@
     "date": "2025-10-05",
     "topic": "Review & Practice",
     "duration_hours": 1.0,
-    "status": "pending",
-    "notes": "rescheduled from 2025-09-22"
+    "status": "missed",
+    "notes": "marked missed on 2025-10-06; rescheduled from 2025-09-22"
   },
   {
     "date": "2025-10-06",
@@ -339,8 +339,8 @@
     "date": "2025-10-05",
     "topic": "Review & Practice",
     "duration_hours": 1.0,
-    "status": "pending",
-    "notes": "rescheduled from 2025-09-28"
+    "status": "missed",
+    "notes": "marked missed on 2025-10-06; rescheduled from 2025-09-28"
   },
   {
     "date": "2025-10-10",
@@ -404,5 +404,19 @@
     "duration_hours": 1.0,
     "status": "pending",
     "notes": "rescheduled from 2025-10-04"
+  },
+  {
+    "date": "2025-10-18",
+    "topic": "Review & Practice",
+    "duration_hours": 1.0,
+    "status": "pending",
+    "notes": "rescheduled from 2025-10-05"
+  },
+  {
+    "date": "2025-10-19",
+    "topic": "Review & Practice",
+    "duration_hours": 1.0,
+    "status": "pending",
+    "notes": "rescheduled from 2025-10-05"
   }
 ]
