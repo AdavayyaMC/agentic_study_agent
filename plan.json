@@ -388,15 +388,15 @@
     "date": "2025-10-17",
     "topic": "Chapter 2 - Core Concepts",
     "duration_hours": 1.0,
-    "status": "pending",
-    "notes": "rescheduled from 2025-10-03"
+    "status": "missed",
+    "notes": "marked missed on 2025-10-18; rescheduled from 2025-10-03"
   },
   {
     "date": "2025-10-17",
     "topic": "Review & Practice",
     "duration_hours": 1.0,
-    "status": "pending",
-    "notes": "rescheduled from 2025-10-04"
+    "status": "missed",
+    "notes": "marked missed on 2025-10-18; rescheduled from 2025-10-04"
   },
   {
     "date": "2025-10-18",
@@ -509,5 +509,19 @@
     "duration_hours": 1.0,
     "status": "pending",
     "notes": "rescheduled from 2025-10-16"
+  },
+  {
+    "date": "2025-10-31",
+    "topic": "Chapter 2 - Core Concepts",
+    "duration_hours": 1.0,
+    "status": "pending",
+    "notes": "rescheduled from 2025-10-17"
+  },
+  {
+    "date": "2025-11-01",
+    "topic": "Review & Practice",
+    "duration_hours": 1.0,
+    "status": "pending",
+    "notes": "rescheduled from 2025-10-17"
   }
 ]
