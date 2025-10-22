@@ -430,8 +430,8 @@
     "date": "2025-10-21",
     "topic": "Chapter 2 - Core Concepts",
     "duration_hours": 2.0,
-    "status": "pending",
-    "notes": "rescheduled from 2025-10-07"
+    "status": "missed",
+    "notes": "marked missed on 2025-10-22; rescheduled from 2025-10-07"
   },
   {
     "date": "2025-10-23",
@@ -558,5 +558,12 @@
     "duration_hours": 2.0,
     "status": "pending",
     "notes": "rescheduled from 2025-10-20"
+  },
+  {
+    "date": "2025-11-05",
+    "topic": "Chapter 2 - Core Concepts",
+    "duration_hours": 2.0,
+    "status": "pending",
+    "notes": "rescheduled from 2025-10-21"
   }
 ]
