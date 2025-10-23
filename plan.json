@@ -129,8 +129,8 @@
     "date": "2025-10-22",
     "topic": "Review & Practice",
     "duration_hours": 1.0,
-    "status": "pending",
-    "notes": "Periodic review day"
+    "status": "missed",
+    "notes": "marked missed on 2025-10-23; Periodic review day"
   },
   {
     "date": "2025-10-28",
@@ -458,8 +458,8 @@
     "date": "2025-10-22",
     "topic": "Chapter 2 - Core Concepts",
     "duration_hours": 1.0,
-    "status": "pending",
-    "notes": "rescheduled from 2025-10-10"
+    "status": "missed",
+    "notes": "marked missed on 2025-10-23; rescheduled from 2025-10-10"
   },
   {
     "date": "2025-10-25",
@@ -565,5 +565,19 @@
     "duration_hours": 2.0,
     "status": "pending",
     "notes": "rescheduled from 2025-10-21"
+  },
+  {
+    "date": "2025-11-06",
+    "topic": "Review & Practice",
+    "duration_hours": 1.0,
+    "status": "pending",
+    "notes": "rescheduled from 2025-10-22"
+  },
+  {
+    "date": "2025-11-06",
+    "topic": "Chapter 2 - Core Concepts",
+    "duration_hours": 1.0,
+    "status": "pending",
+    "notes": "rescheduled from 2025-10-22"
   }
 ]
