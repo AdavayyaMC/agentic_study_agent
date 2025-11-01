@@ -507,15 +507,15 @@
     "date": "2025-10-31",
     "topic": "Chapter 3 - Advanced",
     "duration_hours": 1.0,
-    "status": "pending",
-    "notes": "rescheduled from 2025-10-16"
+    "status": "missed",
+    "notes": "marked missed on 2025-11-01; rescheduled from 2025-10-16"
   },
   {
     "date": "2025-10-31",
     "topic": "Chapter 2 - Core Concepts",
     "duration_hours": 1.0,
-    "status": "pending",
-    "notes": "rescheduled from 2025-10-17"
+    "status": "missed",
+    "notes": "marked missed on 2025-11-01; rescheduled from 2025-10-17"
   },
   {
     "date": "2025-11-01",
@@ -642,5 +642,19 @@
     "duration_hours": 2.0,
     "status": "pending",
     "notes": "rescheduled from 2025-10-30"
+  },
+  {
+    "date": "2025-11-13",
+    "topic": "Chapter 3 - Advanced",
+    "duration_hours": 1.0,
+    "status": "pending",
+    "notes": "rescheduled from 2025-10-31"
+  },
+  {
+    "date": "2025-11-15",
+    "topic": "Chapter 2 - Core Concepts",
+    "duration_hours": 1.0,
+    "status": "pending",
+    "notes": "rescheduled from 2025-10-31"
   }
 ]
