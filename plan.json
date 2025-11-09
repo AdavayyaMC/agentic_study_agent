@@ -591,8 +591,8 @@
     "date": "2025-11-08",
     "topic": "Chapter 3 - Advanced",
     "duration_hours": 2.0,
-    "status": "pending",
-    "notes": "rescheduled from 2025-10-24"
+    "status": "missed",
+    "notes": "marked missed on 2025-11-09; rescheduled from 2025-10-24"
   },
   {
     "date": "2025-11-10",
@@ -733,5 +733,12 @@
     "duration_hours": 2.0,
     "status": "pending",
     "notes": "rescheduled from 2025-11-07"
+  },
+  {
+    "date": "2025-11-25",
+    "topic": "Chapter 3 - Advanced",
+    "duration_hours": 2.0,
+    "status": "pending",
+    "notes": "rescheduled from 2025-11-08"
   }
 ]
