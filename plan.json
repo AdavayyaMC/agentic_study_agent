@@ -605,8 +605,8 @@
     "date": "2025-11-11",
     "topic": "Revision & Practice Tests",
     "duration_hours": 2.0,
-    "status": "pending",
-    "notes": "rescheduled from 2025-10-26"
+    "status": "missed",
+    "notes": "marked missed on 2025-11-12; rescheduled from 2025-10-26"
   },
   {
     "date": "2025-11-12",
@@ -761,5 +761,12 @@
     "duration_hours": 2.0,
     "status": "pending",
     "notes": "rescheduled from 2025-11-10"
+  },
+  {
+    "date": "2025-11-29",
+    "topic": "Revision & Practice Tests",
+    "duration_hours": 2.0,
+    "status": "pending",
+    "notes": "rescheduled from 2025-11-11"
   }
 ]
