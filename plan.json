@@ -626,8 +626,8 @@
     "date": "2025-11-13",
     "topic": "Review & Practice",
     "duration_hours": 1.0,
-    "status": "pending",
-    "notes": "rescheduled from 2025-10-28"
+    "status": "missed",
+    "notes": "marked missed on 2025-11-14; rescheduled from 2025-10-28"
   },
   {
     "date": "2025-11-14",
@@ -647,8 +647,8 @@
     "date": "2025-11-13",
     "topic": "Chapter 3 - Advanced",
     "duration_hours": 1.0,
-    "status": "pending",
-    "notes": "rescheduled from 2025-10-31"
+    "status": "missed",
+    "notes": "marked missed on 2025-11-14; rescheduled from 2025-10-31"
   },
   {
     "date": "2025-11-15",
@@ -775,5 +775,19 @@
     "duration_hours": 2.0,
     "status": "pending",
     "notes": "rescheduled from 2025-11-12"
+  },
+  {
+    "date": "2025-11-26",
+    "topic": "Review & Practice",
+    "duration_hours": 1.0,
+    "status": "pending",
+    "notes": "rescheduled from 2025-11-13"
+  },
+  {
+    "date": "2025-11-27",
+    "topic": "Chapter 3 - Advanced",
+    "duration_hours": 1.0,
+    "status": "pending",
+    "notes": "rescheduled from 2025-11-13"
   }
 ]
