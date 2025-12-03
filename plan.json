@@ -794,22 +794,22 @@
     "date": "2025-12-01",
     "topic": "Chapter 2 - Core Concepts",
     "duration_hours": 2.0,
-    "status": "pending",
-    "notes": "rescheduled from 2025-11-14"
+    "status": "missed",
+    "notes": "marked missed on 2025-12-03; rescheduled from 2025-11-14"
   },
   {
     "date": "2025-12-02",
     "topic": "Review & Practice",
     "duration_hours": 1.0,
-    "status": "pending",
-    "notes": "rescheduled from 2025-11-15"
+    "status": "missed",
+    "notes": "marked missed on 2025-12-03; rescheduled from 2025-11-15"
   },
   {
     "date": "2025-12-02",
     "topic": "Chapter 2 - Core Concepts",
     "duration_hours": 1.0,
-    "status": "pending",
-    "notes": "rescheduled from 2025-11-15"
+    "status": "missed",
+    "notes": "marked missed on 2025-12-03; rescheduled from 2025-11-15"
   },
   {
     "date": "2025-12-04",
@@ -964,5 +964,26 @@
     "duration_hours": 2.0,
     "status": "pending",
     "notes": "rescheduled from 2025-11-30"
+  },
+  {
+    "date": "2025-12-16",
+    "topic": "Review & Practice",
+    "duration_hours": 1.0,
+    "status": "pending",
+    "notes": "rescheduled from 2025-12-02"
+  },
+  {
+    "date": "UNSCHEDULED",
+    "topic": "Chapter 2 - Core Concepts",
+    "duration_hours": 2.0,
+    "status": "pending",
+    "notes": "reschedule failed: not enough free days before exam."
+  },
+  {
+    "date": "UNSCHEDULED",
+    "topic": "Chapter 2 - Core Concepts",
+    "duration_hours": 1.0,
+    "status": "pending",
+    "notes": "reschedule failed: not enough free days before exam."
   }
 ]
